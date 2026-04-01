@@ -1,150 +1,183 @@
 :root {
-  --primary: #00ffe5;
-  --secondary: #ff00ff;
-  --bg-dark: #0f172a;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
+    --primary: #00ffe5;
+    --secondary: #ff00ff;
+    --bg-dark: #0f172a;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: radial-gradient(circle at top right, #1e293b, #0f172a);
-  background-attachment: fixed;
-  color: white;
-  line-height: 1.6;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #1e293b, #0f172a);
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+    line-height: 1.6;
 }
 
-/* Navigasyon - Daha şeffaf ve şık */
+/* Navigasyon */
 nav {
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.8);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 nav a {
-  color: #94a3b8;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+    color: #94a3b8;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-  color: var(--primary);
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
 }
 
-/* Başlıklar - Neon parlamayı azalttık */
-h1 {
-  font-size: 3rem;
-  margin-top: 60px;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
+/* Profil Fotoğrafı (Düzenlendi) */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 3px solid var(--glass-border);
+    box-shadow: 0 0 20px rgba(0, 255, 229, 0.3), 0 0 40px rgba(255, 0, 255, 0.2);
+    display: block;
+    transition: 0.5s ease;
 }
 
-h2 {
-  color: #f1f5f9;
-  margin-bottom: 30px;
+.profile-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px var(--primary), 0 0 50px var(--secondary);
 }
 
-/* Profil Fotoğrafı */
-img {
-  border-radius: 50%;
-  border: 4px solid var(--glass-border);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  transition: 0.5s;
+/* Başlıklar */
+h1 span {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-img:hover {
-  transform: rotate(5deg) scale(1.05);
+/* Kart Yapısı */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Kartlar - Cam Efekti (İşte farkı bu yaratıyor) */
 .kart {
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  padding: 40px;
-  margin: 30px auto;
-  width: 70%;
-  max-width: 800px;
-  border-radius: 24px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 20px;
+    transition: 0.4s;
 }
 
 .kart:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Form Elemanları */
-#iletisim-form input, 
-#iletisim-form textarea {
-  width: 80%;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 12px;
-  border: 1px solid var(--glass-border);
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  font-family: inherit;
-  transition: 0.3s;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-#iletisim-form input:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: rgba(0, 0, 0, 0.4);
+/* Mode Toggle - Sağ Üstte Sabit */
+#mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-/* Butonlar */
-button {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #0f172a;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(0, 255, 229, 0.2);
+/* Form ve Butonlar */
+#iletisim-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 255, 229, 0.4);
+#iletisim-form input, #iletisim-form textarea {
+    width: 90%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0,0,0,0.3);
+    color: white;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #0f172a;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary);
 }
 
 /* Sosyal Medya */
+#sosyal {
+    margin: 40px 0;
+}
+
 #sosyal a {
-  color: #94a3b8;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: 0.3s;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 #sosyal a:hover {
-  color: var(--secondary);
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
 }
 
-/* Light Mode Düzeltmesi */
+/* Light Mode */
 body.light-mode {
-  background: #f8fafc;
-  color: #1e293b;
+    background: #f1f5f9;
+    color: #1e293b;
 }
 
 body.light-mode .kart {
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border: 1px solid #e2e8f0;
+    background: white;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode #mode-toggle {
+    color: #1e293b;
+    border-color: #cbd5e1;
 }
