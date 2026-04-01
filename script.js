@@ -26,10 +26,20 @@ if (form) {
     form.addEventListener("submit", function(e) {
         e.preventDefault();
         
-        // Basit bir validasyon örneği
         const isim = document.getElementById("isim").value;
-        alert(`Teşekkürler ${isim}! Mesajınız başarıyla gönderildi. 😊`);
-        
-        this.reset();
+
+        // 🔥 Formspree gönderimi eklendi (bozmadan)
+        fetch("https://formspree.io/f/xpqolgpj", {
+            method: "POST",
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(() => {
+            alert(`Teşekkürler ${isim}! Mesajınız bana ulaştı 🚀`);
+            this.reset();
+        }).catch(() => {
+            alert("Bir hata oluştu, tekrar dene 😢");
+        });
     });
 }
