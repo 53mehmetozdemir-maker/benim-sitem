@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehmet Özdemir | Portfolyo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <nav>
-        <div class="logo">MÖ</div>
+        <div class="logo">
+    <a href="index.html" style="text-decoration: none; color: inherit;">MÖ</a>
+</div>
         <div class="nav-links">
             <a href="#hakkimda">Hakkımda</a>
             <a href="#projeler">Projelerim</a>
             <a href="#iletisim">İletişim</a>
         </div>
-        <button id="mode-toggle" onclick="toggleDarkMode()">🌙</button>
+        <!-- onclick kaldırıldı, JS içinden yönetilecek -->
+        <button id="mode-toggle">🌙</button>
     </nav>
 </header>
 
@@ -31,14 +36,14 @@
     </section>
 
     <section id="hakkimda" class="section">
-        <h2>Hakkımda</h2>
+        <h2><i class="fas fa-user-astronaut"></i> Hakkımda</h2>
         <div class="card">
             <p>Sektöre yeni adım atmış, öğrenmeye hevesli bir geliştiriciyim. Şu an modern web teknolojileri ve otomasyon sistemleri ile ilgileniyorum.</p>
         </div>
     </section>
 
     <section id="projeler" class="section">
-        <h2>Projelerim</h2>
+        <h2><i class="fas fa-code"></i> Projelerim</h2>
         <div class="grid">
             <div class="kart">
                 <h3>İlk Projem</h3>
@@ -52,7 +57,7 @@
     </section>
 
     <section id="iletisim" class="section">
-        <h2>İletişim</h2>
+        <h2><i class="fas fa-envelope"></i> İletişim</h2>
         <form id="iletisim-form" class="card">
             <input type="text" id="isim" placeholder="Adınız" required>
             <input type="email" id="email" placeholder="E-posta Adresiniz" required>
@@ -64,9 +69,9 @@
 
 <footer>
     <div id="sosyal">
-        <a href="https://instagram.com/mmehmetozdmr" target="_blank">Instagram</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://instagram.com/mmehmetozdmr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
     <p>© 2026 Mehmet Özdemir. Tüm hakları saklıdır.</p>
 </footer>
