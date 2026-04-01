@@ -64,6 +64,11 @@ button:hover {
 }
 
 .kart {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -105,4 +110,37 @@ body.light-mode .kart {
 body.light-mode button {
   background: #111;
   color: #fff;
+}
+#iletisim-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#iletisim-form input, 
+#iletisim-form textarea {
+  width: 60%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+#iletisim-form button {
+  margin-top: 10px;
+}
+#sosyal {
+  margin-top: 20px;
+}
+
+#sosyal a {
+  color: #00ffcc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+#sosyal a:hover {
+  color: white;
 }

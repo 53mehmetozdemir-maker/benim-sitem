@@ -22,18 +22,31 @@
 <p>Yazılıma yeni başladım...</p>
 
 <h2 id="projeler">Projelerim</h2>
-<ul>
-  <li>İlk projem 🚀</li>
-</ul>
+<div class="kart">
+  <h3>İlk Projem</h3>
+  <p>Bu benim ilk web projem 🚀</p>
+</div>
+
+<div class="kart">
+  <h3>İkinci Projem</h3>
+  <p>Daha gelişmiş bir proje örneği</p>
+</div>
 
 <h2 id="iletisim">İletişim</h2>
-<button onclick="mesajGoster()">Bana ulaş</button>
+<form id="iletisim-form">
+  <input type="text" id="isim" placeholder="Adınız" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="mesaj" placeholder="Mesajınız" required></textarea>
+  <button type="submit">Gönder</button>
+</form>
+
 <button onclick="toggleDarkMode()">Dark/Light Mode</button>
 
 <script src="script.js"></script>
 </body>
 </html>
-<div class="kart">
-  <h3>İlk Projem</h3>
-  <p>Bu benim ilk web projem 🚀</p>
+<div id="sosyal">
+  <a href="https://instagram.com" target="_blank">https://www.instagram.com/mmehmetozdmr/</a> |
+  <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+  <a href="https://github.com" target="_blank">GitHub</a>
 </div>
