@@ -6,6 +6,7 @@ body {
   animation: gradientBG 15s ease infinite;
   color: white;
   text-align: center;
+  transition: background 0.5s, color 0.5s;
 }
 
 @keyframes gradientBG {
@@ -51,6 +52,29 @@ button:hover {
   color: black;
 }
 
+/* Dark/Light toggle butonu sağ üstte */
+#mode-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #00ffcc;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+#mode-toggle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+}
+
 img {
   border-radius: 50%;
   margin-top: 20px;
@@ -94,6 +118,7 @@ nav a {
 
 nav a:hover { color: #ffffff; }
 
+/* Light mode stilleri */
 body.light-mode {
   background: #f0f0f0;
   color: #111;
@@ -102,6 +127,7 @@ body.light-mode {
 body.light-mode nav { background: #ddd; }
 body.light-mode .kart { background: rgba(0,0,0,0.05); }
 body.light-mode button { background: #111; color: #fff; }
+body.light-mode #mode-toggle { background: #111; color: #fff; box-shadow: 0 0 10px #111; }
 
 #iletisim-form {
   display: flex;
