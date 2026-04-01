@@ -1,20 +1,30 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: white;
   text-align: center;
 }
 
-h1 {
-  margin-top: 50px;
-  font-size: 40px;
-  color: #00ffcc;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-h2 {
-  margin-top: 40px;
-  color: #00ffcc;
+h1, h2 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 1s forwards;
+}
+
+h1 { animation-delay: 0.2s; font-size: 40px; color: #00ffcc; margin-top: 50px; }
+h2 { animation-delay: 0.5s; color: #00ffcc; margin-top: 40px; }
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 p {
@@ -24,43 +34,32 @@ p {
 
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
   background: #00ffcc;
   color: black;
   font-weight: bold;
   cursor: pointer;
   border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 button:hover {
-  background: white;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc, 0 0 35px #00ffcc;
+  background: #00ffcc;
+  color: black;
 }
+
 img {
   border-radius: 50%;
   margin-top: 20px;
 }
 
 @media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-  .kart {
-    width: 90%;
-    padding: 15px;
-  }
-  img {
-    width: 100px;
-  }
-}
-button {
-  transition: transform 0.3s, background 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-  background: #ffffff;
-  color: #00ffcc;
+  body { font-size: 14px; }
+  .kart { width: 90%; padding: 15px; }
+  img { width: 100px; }
 }
 
 .kart {
@@ -69,13 +68,15 @@ button:hover {
   margin: 20px auto;
   width: 60%;
   border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
 }
 
 .kart:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0,255,204,0.5);
+  background: rgba(0,255,204,0.1);
 }
+
 nav {
   background: #111;
   padding: 15px;
@@ -88,29 +89,20 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #ffffff;
-}
-/* Light mode stilleri */
+nav a:hover { color: #ffffff; }
+
 body.light-mode {
   background: #f0f0f0;
   color: #111;
 }
 
-body.light-mode nav {
-  background: #ddd;
-}
+body.light-mode nav { background: #ddd; }
+body.light-mode .kart { background: rgba(0,0,0,0.05); }
+body.light-mode button { background: #111; color: #fff; }
 
-body.light-mode .kart {
-  background: rgba(0,0,0,0.05);
-}
-
-body.light-mode button {
-  background: #111;
-  color: #fff;
-}
 #iletisim-form {
   display: flex;
   flex-direction: column;
@@ -127,9 +119,8 @@ body.light-mode button {
   border: none;
 }
 
-#iletisim-form button {
-  margin-top: 10px;
-}
+#iletisim-form button { margin-top: 10px; }
+
 #sosyal {
   margin-top: 20px;
 }
@@ -139,8 +130,11 @@ body.light-mode button {
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
+  transition: all 0.3s;
 }
 
 #sosyal a:hover {
-  color: white;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  transform: scale(1.2);
 }
