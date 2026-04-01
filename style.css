@@ -40,3 +40,69 @@ img {
   border-radius: 50%;
   margin-top: 20px;
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .kart {
+    width: 90%;
+    padding: 15px;
+  }
+  img {
+    width: 100px;
+  }
+}
+button {
+  transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ffffff;
+  color: #00ffcc;
+}
+
+.kart {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kart:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+nav {
+  background: #111;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #00ffcc;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+/* Light mode stilleri */
+body.light-mode {
+  background: #f0f0f0;
+  color: #111;
+}
+
+body.light-mode nav {
+  background: #ddd;
+}
+
+body.light-mode .kart {
+  background: rgba(0,0,0,0.05);
+}
+
+body.light-mode button {
+  background: #111;
+  color: #fff;
+}
