@@ -1,9 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #ff4e50, #f9d423, #24c6dc, #514a9d);
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d);
   background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  animation: gradientBG 20s ease infinite;
   color: white;
   text-align: center;
   transition: background 0.5s, color 0.5s;
@@ -19,11 +19,11 @@ h1, h2 {
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeIn 1s forwards;
-  text-shadow: 0 0 20px #00ffe5, 0 0 40px #ff00ff;
+  text-shadow: 0 0 15px #00ffe5, 0 0 30px #ff00ff;
 }
 
-h1 { animation-delay: 0.2s; font-size: 40px; color: #00ffe5; margin-top: 50px; }
-h2 { animation-delay: 0.5s; color: #00ffe5; margin-top: 40px; }
+h1 { animation-delay: 0.2s; font-size: 42px; color: #00ffe5; margin-top: 50px; }
+h2 { animation-delay: 0.5s; color: #ff00ff; margin-top: 40px; }
 
 @keyframes fadeIn {
   to { opacity: 1; transform: translateY(0); }
@@ -43,7 +43,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   border-radius: 15px;
-  box-shadow: 0 0 10px #00ffe5, 0 0 20px #ff00ff;
+  box-shadow: 0 0 15px #00ffe5, 0 0 25px #ff00ff;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
@@ -61,17 +61,16 @@ button:hover {
   height: 40px;
   border: none;
   background: transparent; /* Arka plan yok */
-  color: white; /* Sembol rengi */
-  font-size: 22px;
+  color: currentColor;     /* Body rengi ile aynı */
+  font-size: 24px;
   cursor: pointer;
   z-index: 1000;
-  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
 #mode-toggle:hover {
   transform: scale(1.4);
-  color: #00ffe5;
-  text-shadow: 0 0 15px #00ffe5, 0 0 25px #ff00ff;
+  color: #00ffe5; /* Hoverda hafif neon */
 }
 
 img {
@@ -131,7 +130,7 @@ body.light-mode {
 body.light-mode nav { background: #ddd; }
 body.light-mode .kart { background: rgba(0,0,0,0.05); }
 body.light-mode button { background: #111; color: #fff; }
-body.light-mode #mode-toggle { color: #111; text-shadow: none; }
+body.light-mode #mode-toggle { color: #111; }
 
 #iletisim-form {
   display: flex;
