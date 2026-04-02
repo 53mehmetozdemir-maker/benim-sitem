@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehmet Özdemir | Portfolyo</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -26,6 +26,7 @@
 </header>
 
 <main class="container">
+    <!-- Hero Bölümü -->
     <section class="hero">
         <div class="hero-content">
             <img src="profil.jpg" alt="Mehmet Özdemir" class="profile-img">
@@ -34,6 +35,7 @@
         </div>
     </section>
 
+    <!-- Hakkımda -->
     <section id="hakkimda" class="section">
         <h2><i class="fas fa-user-astronaut"></i> Hakkımda</h2>
         <div class="card scroll-animate">
@@ -41,6 +43,7 @@
         </div>
     </section>
 
+    <!-- Projeler -->
     <section id="projeler" class="section">
         <h2><i class="fas fa-code"></i> Projelerim</h2>
         <div class="grid">
@@ -55,9 +58,10 @@
         </div>
     </section>
 
+    <!-- İletişim -->
     <section id="iletisim" class="section">
         <h2><i class="fas fa-envelope"></i> İletişim</h2>
-        <form id="iletisim-form" class="card">
+        <form id="iletisim-form" class="card scroll-animate">
             <input type="text" id="isim" name="isim" placeholder="Adınız" required>
             <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
             <textarea id="mesaj" name="mesaj" placeholder="Mesajınız" rows="5" required></textarea>
@@ -67,15 +71,11 @@
 </main>
 
 <footer>
-<!-- Sağ altta sabit Instagram butonu -->
-<a href="https://instagram.com/mmehmetozdmr" 
-   class="instagram-float" 
-   target="_blank">
-    <i class="fab fa-instagram"></i>
-</a>    
-<div id="sosyal">
-        <a href="https://instagram.com/mmehmetozdmr" target="_blank" class="sosyal-btn-instagram"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://wa.me/905308927653?text=Merhaba%20Mehmet%20Bey,%20portfolyo%20sitenizden%20ulaşıyorum.%20Sizinle%20bir%20konu%20hakkında%20görüşmek%20isterim." target="_blank">
+    <div id="sosyal">
+        <a href="https://instagram.com/mmehmetozdmr" target="_blank" class="sosyal-btn-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/905308927653?text=Merhaba%20Mehmet%20Bey,%20portfolyo%20sitenizden%20ulaşıyorum." target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp
         </a>        
         <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -84,35 +84,10 @@
     <p>© 2026 Mehmet Özdemir. Tüm hakları saklıdır.</p>
 </footer>
 
-<!-- Sağ altta sabit WhatsApp butonu -->
-<a href="https://wa.me/905308927653?text=Merhaba%20Mehmet%20Bey%20😎%20Sitenizi%20inceledim%20ve%20çok%20beğendim.%20Sizinle%20iletişime%20geçmek%20istiyorum." 
-   class="whatsapp-float" 
-   target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<!-- Floating Butonlar -->
+<a href="https://instagram.com/mmehmetozdmr" class="instagram-float" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/905308927653" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script src="script.js"></script>
-<script>
-// ------------------------------
-// Scroll ile kart büyüme efekti
-// ------------------------------
-const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart");
-
-function animateOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-
-    scrollCards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-
-        if (cardTop < triggerBottom) {
-            card.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", animateOnScroll);
-window.addEventListener("load", animateOnScroll);
-window.addEventListener("resize", animateOnScroll);
-</script>
 </body>
 </html>
