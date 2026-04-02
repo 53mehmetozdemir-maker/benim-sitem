@@ -43,3 +43,22 @@ if (form) {
         });
     });
 }
+// Scroll ile görünür olduğunda Hakkımda ve Projelerim kartlarını büyüt
+const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart");
+
+function animateOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85; // ekranın %85’inde tetikleme
+
+    scrollCards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if (cardTop < triggerBottom) {
+            card.classList.add("active"); // kart görünür olunca büyür
+        }
+    });
+}
+
+// Scroll ve load eventleri ile tetikle
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
+window.addEventListener("resize", animateOnScroll);

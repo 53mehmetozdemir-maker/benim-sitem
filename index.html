@@ -36,7 +36,7 @@
 
     <section id="hakkimda" class="section">
         <h2><i class="fas fa-user-astronaut"></i> Hakkımda</h2>
-        <div class="card">
+        <div class="card scroll-animate">
             <p>Sektöre yeni adım atmış, öğrenmeye hevesli bir geliştiriciyim. Şu an modern web teknolojileri ve otomasyon sistemleri ile ilgileniyorum.</p>
         </div>
     </section>
@@ -44,11 +44,11 @@
     <section id="projeler" class="section">
         <h2><i class="fas fa-code"></i> Projelerim</h2>
         <div class="grid">
-            <div class="kart">
+            <div class="kart scroll-animate">
                 <h3>İlk Projem</h3>
                 <p>HTML ve CSS'in temellerini öğrendiğim ilk heyecanım. 🚀</p>
             </div>
-            <div class="kart">
+            <div class="kart scroll-animate">
                 <h3>İkinci Projem</h3>
                 <p>Modern arayüz tasarımları ve kullanıcı deneyimi odaklı bir çalışma.</p>
             </div>
@@ -92,5 +92,27 @@
 </a>
 
 <script src="script.js"></script>
+<script>
+// ------------------------------
+// Scroll ile kart büyüme efekti
+// ------------------------------
+const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart");
+
+function animateOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    scrollCards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if (cardTop < triggerBottom) {
+            card.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
+window.addEventListener("resize", animateOnScroll);
+</script>
 </body>
 </html>
