@@ -7,7 +7,7 @@
     --text-color: #f1f5f9;
 }
 
-/* Light Mode */
+/* Light Mode Tanımlaması */
 body.light-mode {
     --bg-dark: #f8fafc;
     --card-bg: rgba(255, 255, 255, 0.9);
@@ -15,7 +15,12 @@ body.light-mode {
     --text-color: #1e293b;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -27,78 +32,217 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+/* Navigasyon */
 nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background: var(--bg-dark);
-    backdrop-filter: blur(15px); position: sticky; top: 0;
-    z-index: 1000; border-bottom: 1px solid var(--border); height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: var(--bg-dark);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    height: 70px;
 }
 
 .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); }
-.nav-links a { text-decoration: none; color: var(--text-color); margin-left: 20px; font-weight: 600; font-size: 0.85rem; opacity: 0.8; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); opacity: 1; }
 
-#mode-toggle { background: transparent; border: 1px solid var(--border); cursor: pointer; font-size: 1.2rem; padding: 5px 12px; border-radius: 12px; transition: 0.3s; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    transition: 0.3s;
+}
 
+.nav-links a:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Light Mode Buton Stili */
+#mode-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px 12px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+/* Hero & Container */
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; width: 100%; }
 .hero { text-align: center; padding: 80px 0 40px; }
-.profile-img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 20px; object-fit: cover; }
+.profile-img {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 3px solid var(--primary);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
 h1 span { color: var(--primary); }
 
+/* Grid & Cards */
 .section { padding: 50px 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
 
-/* Kartlar */
 .card, .kart {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border);
     padding: 25px;
     border-radius: 20px;
-    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
-    transform: scale(0.95);
-    opacity: 0;
-    box-shadow: none; /* Başlangıçta ışık yok */
-}
-
-/* Scroll animasyonu (mobil) */
-.scroll-animate.active { 
-    transform: scale(1); 
-    opacity: 1; 
-    box-shadow: 0 10px 25px rgba(0,255,229,0.3); /* scrollda ışık */
-}
-
-/* Hover efektleri sadece PC’de */
-@media (hover: hover) {
-    .card, .kart { opacity: 1; transform: scale(0.95); } /* scroll devre dışı PC’de */
-    .card:hover, .kart:hover { 
-        transform: scale(1.05); 
-        box-shadow: 0 15px 35px rgba(0,255,229,0.5); 
-    }
+    transition: 0.3s ease;
 }
 
 /* Form */
 #iletisim-form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto; }
-input, textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: rgba(15,23,42,0.1); color: var(--text-color); }
-.btn { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 12px 35px; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; align-self: center; }
+input, textarea {
+    width: 100%; padding: 14px; border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.1);
+    color: var(--text-color);
+}
+
+.btn {
+    background: transparent; color: var(--primary);
+    border: 2px solid var(--primary); padding: 12px 35px;
+    border-radius: 50px; font-weight: 700; cursor: pointer;
+    transition: 0.3s; align-self: center;
+}
+
 .btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
 
+/* Footer */
 footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); margin-top: 50px; }
-#sosyal a { color: var(--primary); margin: 0 10px; text-decoration: none; transition: 0.3s; }
-#sosyal a:hover { filter: brightness(1.3); text-shadow: 0 0 8px var(--primary); }
 
-@media (max-width: 768px) { .nav-links { display: none; } }
+#sosyal a { 
+    color: var(--primary); 
+    margin: 0 10px; 
+    text-decoration: none; 
+    transition: 0.3s;
+}
 
-.logo a { transition: 0.3s; display: inline-block; }
-.logo a:hover { color: var(--primary); transform: scale(1.1); filter: drop-shadow(0 0 5px var(--primary)); }
+#sosyal a:hover {
+    filter: brightness(1.3);
+    text-shadow: 0 0 8px var(--primary);
+}
 
-/* WhatsApp & Instagram */
-.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; font-size: 26px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 0 15px rgba(37,211,102,0.7); z-index: 999; transition: 0.3s; }
-.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(37,211,102,1); }
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+}
 
-.sosyal-btn-instagram { position: relative; display: inline-flex; align-items: center; gap: 5px; color: #E1306C; text-decoration: none; transition: 0.3s; }
-.sosyal-btn-instagram::after { content: ''; position: absolute; width: 8px; height: 8px; background: #ffdc00; border-radius: 50%; right: -5px; top: -5px; animation: ping 1.5s infinite; }
-.sosyal-btn-instagram:hover { filter: brightness(1.3); text-shadow: 0 0 8px #E1306C; }
+.logo a {
+    transition: 0.3s;
+    display: inline-block;
+}
 
-.instagram-float { position: fixed; bottom: 90px; right: 20px; background: #E1306C; color: white; font-size: 26px; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 0 15px rgba(225,48,108,0.7); z-index: 999; transition: 0.3s; }
-.instagram-float:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(225,48,108,1); }
+.logo a:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px var(--primary));
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 26px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 1);
+}
+
+.sosyal-btn-instagram {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #E1306C;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sosyal-btn-instagram::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffdc00;
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+    animation: ping 1.5s infinite;
+}
+
+.sosyal-btn-instagram:hover {
+    filter: brightness(1.3);
+    text-shadow: 0 0 8px #E1306C;
+}
+
+.instagram-float {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: #E1306C;
+    color: white;
+    font-size: 26px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(225,48,108,0.7);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.instagram-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(225,48,108,1);
+}
+
+/* Hakkımda ve Projelerim kartları için scroll animasyonu */
+#hakkimda .card,
+#projeler .kart {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+}
+
+#hakkimda .card.active,
+#projeler .kart.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#hakkimda .card:hover,
+#projeler .kart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 229, 0.3);
+}
