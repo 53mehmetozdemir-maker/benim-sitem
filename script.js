@@ -55,6 +55,8 @@ function animateOnScroll() {
 
         if (cardTop < triggerBottom) {
             card.classList.add("active"); // kart görünür olunca büyür
+        } else {
+            card.classList.remove("active"); // geri kaydırınca küçülür
         }
     });
 }

@@ -101,7 +101,21 @@ h1 span { color: var(--primary); }
     border: 1px solid var(--border);
     padding: 25px;
     border-radius: 20px;
-    transition: 0.3s ease;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+/* Scroll animasyonu aktif olduğunda */
+.scroll-animate.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.card:hover,
+.kart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 229, 0.3);
 }
 
 /* Form */
@@ -152,6 +166,7 @@ footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border
     filter: drop-shadow(0 0 5px var(--primary));
 }
 
+/* WhatsApp & Instagram Float Buttons */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -225,24 +240,4 @@ footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border
 .instagram-float:hover {
     transform: scale(1.1);
     box-shadow: 0 0 25px rgba(225,48,108,1);
-}
-
-/* Hakkımda ve Projelerim kartları için scroll animasyonu */
-#hakkimda .card,
-#projeler .kart {
-    transform: scale(0.95);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
-}
-
-#hakkimda .card.active,
-#projeler .kart.active {
-    transform: scale(1);
-    opacity: 1;
-}
-
-#hakkimda .card:hover,
-#projeler .kart:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 255, 229, 0.3);
 }
