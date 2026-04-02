@@ -43,8 +43,9 @@ if (form) {
         });
     });
 }
-// Scroll ile görünür olduğunda Hakkımda ve Projelerim kartlarını büyüt
-const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart");
+
+// Scroll ile görünür olduğunda Hakkımda, Projelerim ve İletişim kartlarını büyüt
+const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart, #iletisim .card");
 
 function animateOnScroll() {
     const triggerBottom = window.innerHeight * 0.85; // ekranın %85’inde tetikleme
