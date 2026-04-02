@@ -41,24 +41,32 @@ if (form) {
     });
 }
 
-// Scroll ile görünür olduğunda Hakkımda, Projelerim ve İletişim kartlarını büyüt
-const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart, #iletisim .card");
+// ----------------------------
+// Scroll ile görünür olduğunda animasyon (mobil)
+// ----------------------------
 
-function animateOnScroll() {
-    const triggerBottom = window.innerHeight * 0.95; // Mobil uyumlu tetikleme
+// Hover destekleyen cihazlarda scroll animasyonu devre dışı
+const isHoverSupported = window.matchMedia("(hover: hover)").matches;
 
-    scrollCards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
+if (!isHoverSupported) {
+    const scrollCards = document.querySelectorAll("#hakkimda .card, #projeler .kart, #iletisim .card");
 
-        if (cardTop < triggerBottom) {
-            card.classList.add("active");
-        } else {
-            card.classList.remove("active"); // geri kaydırınca küçülür
-        }
+    function animateOnScroll() {
+        const triggerBottom = window.innerHeight * 0.95; // Mobil uyumlu tetikleme
+
+        scrollCards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerBottom) {
+                card.classList.add("active");
+            } else {
+                card.classList.remove("active"); // geri kaydırınca küçülür
+            }
+        });
+    }
+
+    // Scroll, load ve resize eventleri
+    ['scroll', 'load', 'resize'].forEach(evt => {
+        window.addEventListener(evt, animateOnScroll);
     });
 }
-
-// Scroll, load ve resize eventleri
-['scroll', 'load', 'resize'].forEach(evt => {
-    window.addEventListener(evt, animateOnScroll);
-});

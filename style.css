@@ -58,12 +58,23 @@ h1 span { color: var(--primary); }
     transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
     transform: scale(0.95);
     opacity: 0;
+    box-shadow: none; /* Başlangıçta ışık yok */
 }
 
-/* Scroll animasyonu için */
-.scroll-animate.active { transform: scale(1); opacity: 1; }
+/* Scroll animasyonu (mobil) */
+.scroll-animate.active { 
+    transform: scale(1); 
+    opacity: 1; 
+    box-shadow: 0 10px 25px rgba(0,255,229,0.3); /* scrollda ışık */
+}
+
+/* Hover efektleri sadece PC’de */
 @media (hover: hover) {
-    .card:hover, .kart:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,255,229,0.3); }
+    .card, .kart { opacity: 1; transform: scale(0.95); } /* scroll devre dışı PC’de */
+    .card:hover, .kart:hover { 
+        transform: scale(1.05); 
+        box-shadow: 0 15px 35px rgba(0,255,229,0.5); 
+    }
 }
 
 /* Form */
